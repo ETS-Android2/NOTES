@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">NOTES</string>
+    <string name="SIGN_IN">SIGN IN</string>
+    <string name="SIGN_UP">SIGN UP</string>
+    <string name="DELETE_ALL_NOTES">DELETE ALL NOTES</string>
+    <string name="LOG_OUT">LOG OUT</string>
+    <string name="TITLE">TITLE</string>
+    <string name="DESCRIPTION">DESCRIPTION</string>
+    <string name="NAME">NAME</string>
+    <string name="AGE">AGE</string>
+    <string name="EMAIL">EMAIL</string>
+    <string name="PASSWORD">PASSWORD</string>
+    <string name="REMEMBER_ME">Remember me?</string>
+    <string name="FORGOT_PASSWORD">Forgot password?</string>
+</resources>

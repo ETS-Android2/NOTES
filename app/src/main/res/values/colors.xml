@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <!--Main Activity-->
+    <color name="MainActivityColor">#FFFFFF</color>
+
+    <!--Note Layout-->
+    <color name="NoteLayoutColor">#F24C00</color>
+    <color name="NoteLayoutTextColor">#FFFCFC</color>
+    <color name="NoteLayoutHintTextColor">#2E2E2E</color>
+
+    <!--Note Editor Layout-->
+    <color name="NoteEditorLayoutColor">#FFFFFF</color>
+    <color name="NoteEditorTextColor">#000000</color>
+    <color name="NoteEditorHintTextColor">#2E2E2E</color>
+
+    <!--Sign In and Sign Up Layout-->
+    <color name="SIUHintTextColor">#90000000</color>
+    <color name="SIUDrawableColor">#3C3C3C</color>
+
+    <color name="fabButton">#FF631B</color>
+    <color name="notesLogoColor">#5A5A5A</color>
+</resources>
