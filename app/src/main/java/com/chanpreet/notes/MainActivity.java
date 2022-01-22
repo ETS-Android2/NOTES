@@ -1,14 +1,11 @@
-package com.example.notes;
+package com.chanpreet.notes;
 
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import androidx.fragment.app.Fragment;

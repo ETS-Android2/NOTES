@@ -1,4 +1,4 @@
-package com.example.notes;
+package com.chanpreet.notes;
 
 public class Params {
     public static final String KEY_ID = "ID";

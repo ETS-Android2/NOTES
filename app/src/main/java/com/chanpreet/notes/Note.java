@@ -1,4 +1,4 @@
-package com.example.notes;
+package com.chanpreet.notes;
 
 import androidx.annotation.NonNull;
 

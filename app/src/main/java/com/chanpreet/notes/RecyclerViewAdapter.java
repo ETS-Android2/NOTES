@@ -1,4 +1,4 @@
-package com.example.notes;
+package com.chanpreet.notes;
 
 import android.content.Context;
 import android.content.Intent;

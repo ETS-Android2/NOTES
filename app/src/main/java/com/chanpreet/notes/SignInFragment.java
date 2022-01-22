@@ -1,4 +1,4 @@
-package com.example.notes;
+package com.chanpreet.notes;
 
 import android.app.ProgressDialog;
 import android.content.Context;

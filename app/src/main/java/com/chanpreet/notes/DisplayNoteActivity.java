@@ -1,4 +1,4 @@
-package com.example.notes;
+package com.chanpreet.notes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -24,7 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class DisplayNoteActivity extends AppCompatActivity {
 
