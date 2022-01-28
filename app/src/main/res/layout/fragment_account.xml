@@ -1,154 +1,121 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NoteEditorActivity">
+    tools:context=".YourProfileFragment">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:orientation="vertical"
-            android:paddingHorizontal="16dp">
+            android:paddingHorizontal="32dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_bold"
+                android:paddingVertical="48dp"
+                android:text="@string/your_profile"
+                android:textColor="@color/dark_blue_color"
+                android:textSize="42sp"
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/titleETLayout"
+                android:id="@+id/nameETLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
-                android:hint="@string/title"
+                android:hint="@string/name"
                 android:minHeight="48dp"
                 app:boxStrokeColor="@color/dark_blue_color"
                 app:boxStrokeErrorColor="@color/error_color"
                 app:endIconMode="none"
                 app:endIconTint="@color/drawable_tint"
                 app:errorEnabled="true"
-                app:helperTextTextColor="@color/helper_color">
+                app:helperTextTextColor="@color/helper_color"
+                app:startIconTint="@color/drawable_tint">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/titleET"
+                    android:id="@+id/nameET"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:autofillHints=""
+                    android:autofillHints="name"
                     android:fontFamily="@font/raleway"
-                    android:inputType="text"
-                    android:lines="1" />
-
+                    android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/descriptionETLayout"
+                android:id="@+id/emailETLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
-                android:hint="@string/description"
+                android:hint="@string/email"
                 android:minHeight="48dp"
                 app:boxStrokeColor="@color/dark_blue_color"
                 app:boxStrokeErrorColor="@color/error_color"
                 app:endIconMode="none"
                 app:endIconTint="@color/drawable_tint"
                 app:errorEnabled="true"
-                app:helperTextTextColor="@color/helper_color">
+                app:helperText="You cannot edit this field."
+                app:helperTextTextColor="@color/helper_color"
+                app:startIconTint="@color/drawable_tint">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/descriptionET"
+                    android:id="@+id/emailET"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:autofillHints="emailAddress"
+                    android:enabled="false"
                     android:fontFamily="@font/raleway"
-                    android:gravity="start"
-                    android:lines="15" />
-
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/noteColorBtn"
-                android:layout_width="wrap_content"
+                android:id="@+id/resetPasswordBtn"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
                 android:background="@drawable/btn_solid"
                 android:backgroundTint="@color/dark_blue_color"
-                android:drawableEnd="@drawable/ic_edit"
-                android:drawablePadding="16dp"
+                android:backgroundTintMode="multiply"
                 android:fontFamily="@font/raleway"
                 android:hapticFeedbackEnabled="true"
                 android:minHeight="50dp"
-                android:paddingHorizontal="32dp"
-                android:text="@string/select_note_color"
+                android:text="@string/reset_your_password"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
-            <LinearLayout
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/deleteAccountBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="16dp"
-                android:orientation="horizontal">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="10"
-                    android:background="@color/grey" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/raleway_bold"
-                    android:gravity="center"
-                    android:text="@string/note_preview"
-                    android:textColor="@color/dark_blue_color"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="10"
-                    android:background="@color/grey" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
-
-                <include
-                    android:id="@+id/previewNote"
-                    layout="@layout/note_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginHorizontal="8dp"
-                    android:layout_weight="0.6" />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
-            </LinearLayout>
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/btn_outline"
+                android:backgroundTint="@color/grey"
+                android:backgroundTintMode="multiply"
+                android:fontFamily="@font/raleway"
+                android:hapticFeedbackEnabled="true"
+                android:minHeight="50dp"
+                android:text="@string/delete_your_account"
+                android:textAllCaps="false"
+                android:textColor="@color/red"
+                android:textSize="18sp" />
         </LinearLayout>
     </ScrollView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/saveFAB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

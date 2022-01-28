@@ -1,15 +1,84 @@
 <resources>
     <string name="app_name">NOTES</string>
-    <string name="SIGN_IN">LOG IN</string>
-    <string name="SIGN_UP">CREATE ACCOUNT</string>
-    <string name="DELETE_ALL_NOTES">DELETE ALL NOTES</string>
-    <string name="LOG_OUT">LOG OUT</string>
-    <string name="TITLE">TITLE</string>
-    <string name="DESCRIPTION">DESCRIPTION</string>
-    <string name="NAME">NAME</string>
-    <string name="AGE">AGE</string>
-    <string name="EMAIL">EMAIL</string>
-    <string name="PASSWORD">PASSWORD</string>
-    <string name="REMEMBER_ME">Remember me?</string>
-    <string name="FORGOT_PASSWORD">Forgot password?</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="delete_all">Delete all</string>
+    <string name="sign_out">Sign out</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password_title">Reset \nYour \nPassword</string>
+    <string name="forgot_password">Reset your password</string>
+    <string name="save_note">Save Note</string>
+    <string name="loading">Loading…</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="accept_privacy_policy">By signing up you accept our <u>privacy policy.</u></string>
+    <string name="create_account">Create \nAccount</string>
+    <string name="create">Create</string>
+    <string name="notes">Notes</string>
+    <string name="note_quote">Saving information that you can\'t remember.</string>
+    <string name="or">OR</string>
+    <string name="welcome_back">Welcome \nBack</string>
+    <string name="send_reset_link">Send reset link</string>
+    <string name="select_note_color">Select note color</string>
+    <string name="note_preview">Note preview</string>
+    <string name="topper_2">topper_2</string>
+    <string name="edit_color">Edit color</string>
+    <string name="send_verification_link">Request verification link?</string>
+    <string name="yes">yes</string>
+    <string name="nav_open">open</string>
+    <string name="nav_close">close</string>
+    <string name="nav_your_profile">Your Profile</string>
+    <string name="hello">Hello,</string>
+    <string name="reset_your_password">Reset your password</string>
+
+    <string name="welcome_note_title">Welcome</string>
+    <string name="welcome_note_description">Thanks for downloading notes.\nLet\'s get to some basics.\n1)Notes can be created from the PLUS(+) icon in bottom-right.\n2)Any Note can be edited by clicking on the particular note including the color.\n3)You can delete note by swiping left or right.\n4)All notes can be deleted from the menu option.\n5)User\'s can sign out from the menu option.</string>
+
+    <!--Firebase errors-->
+    <string name="unverified_email_error">Please verify your email address.</string>
+    <string name="invalid_user_credentials_error">Email or Password is incorrect.</string>
+    <string name="no_internet_error">Please check your internet connection or try again later.</string>
+    <string name="email_exists_error">Email address already exists. Try another email address.</string>
+    <string name="non_registered_email_address_error">Cannot find this email. Make sure you entered it correct.</string>
+    <string name="invalid_email_error">Enter a valid Email Address.</string>
+    <string name="invalid_password_error">Password should contain lower case, upper case, number, special character and at least 8 characters long.</string>
+    <string name="empty_password_error">Password should not be empty.</string>
+    <string name="invalid_name_error">Name should have at least 3 characters.</string>
+    <string name="wrong_confirm_password_error">Password does not match.</string>
+    <string name="invalid_title_error">Title cannot be empty.</string>
+    <string name="invalid_description_error">Description cannot be empty.</string>
+
+    <!--Firebase success messages-->
+    <string name="account_created_success">Account created successfully.</string>
+    <string name="email_verification_success">Verification link sent to the email address.</string>
+    <string name="password_reset_success">Password reset link sent to you email address.</string>
+    <string name="account_profile_updated_success">Account information updated successfully.</string>
+    <string name="account_deleted_success">Account has been deleted successfully.</string>
+    <string name="note_editor_title">Edit Note</string>
+    <string name="add_note_title">Add Note</string>
+
+    <string name="dialog_please_wait">Please wait.</string>
+    <string name="dialog_creating_link">Creating Link.</string>
+    <string name="dialog_creating_account">Creating account.</string>
+    <string name="dialog_signing_in">Signing in.</string>
+    <string name="contact_us">Contact us</string>
+    <string name="rate_us">Rate us</string>
+
+
+    <!--    Contact Us Activity-->
+    <string name="contact_us_title">Contact\nInformation</string>
+    <string name="contact_us_description">Contact us and i will get to you within 24 hours.</string>
+    <string name="contact_us_name">Chanpreet Singh</string>
+    <string name="contact_us_email">Chanpreet3000@gmail.com</string>
+    <string name="contact_us_phone_number">+91 9717461815</string>
+    <string name="contact_us_location">New Delhi, India</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_profile">Your\nProfile</string>
+    <string name="delete_your_account">Delete your account</string>
 </resources>

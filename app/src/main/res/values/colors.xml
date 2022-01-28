@@ -7,6 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="hint_foreground_material_light">#FFFFFFFF</color>
+    <color name="grey">#9E9E9E</color>
+    <color name="dark_grey">#404040</color>
 
 
     <!--Main Activity-->
@@ -21,6 +24,7 @@
     <color name="NoteEditorLayoutColor">#FFFFFF</color>
     <color name="NoteEditorTextColor">#000000</color>
     <color name="NoteEditorHintTextColor">#2E2E2E</color>
+    <color name="red">#FF0000</color>
 
     <!--Sign In and Sign Up Layout-->
     <color name="SIUHintTextColor">#90000000</color>
@@ -28,4 +32,25 @@
 
     <color name="fabButton">#FF631B</color>
     <color name="notesLogoColor">#5A5A5A</color>
+
+    <color name="light_blue_color">#1887FF</color>
+    <color name="dark_blue_color">#017AFF</color>
+    <color name="extra_dark_blue_color">#0055D3</color>
+    <color name="light_orange_color">#FF8A1E</color>
+    <color name="dark_orange_color">#FF4627</color>
+
+
+    <!--    Input Field Layout-->
+    <color name="error_color">#FF1111</color>
+    <color name="helper_color">#FF1111</color>
+    <color name="drawable_tint">#3C3C3C</color>
+
+
+    <!--    color palette-->
+    <color name="cp_1">#4C3F91</color>
+    <color name="cp_2">#9145B6</color>
+    <color name="cp_3">#B958A5</color>
+    <color name="cp_4">#FF5677</color>
+    <color name="cp_5">#FF6B88</color>
+
 </resources>

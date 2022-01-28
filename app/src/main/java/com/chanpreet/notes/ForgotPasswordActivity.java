@@ -2,58 +2,73 @@ package com.chanpreet.notes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Patterns;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.chanpreet.notes.databinding.ActivityForgotPasswordBinding;
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Objects;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 
-    EditText forgotPasswordEditText;
-    Button forgotPasswordButton;
-    ProgressDialog progressDialog;
+    ActivityForgotPasswordBinding binding;
+    private EditText emailET;
+    private TextInputLayout emailETLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgot_password);
+        binding = ActivityForgotPasswordBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        forgotPasswordEditText = findViewById(R.id.forgotPasswordEditText);
-        forgotPasswordButton = findViewById(R.id.forgotPasswordButton);
+        emailET = binding.emailET;
+        emailETLayout = binding.emailETLayout;
 
-        forgotPasswordButton.setOnClickListener(view -> SendPasswordResetLink());
+        emailET.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Please wait...");
-        progressDialog.setCancelable(false);
-        progressDialog.setCanceledOnTouchOutside(false);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                validateEmail();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        binding.resetBtn.setOnClickListener(view -> SendPasswordResetLink());
+        binding.signInBtn.setOnClickListener(view -> startActivity(new Intent(this, SignInActivity.class)));
+        binding.signUpBtn.setOnClickListener(view -> startActivity(new Intent(this, SignUpActivity.class)));
+
+        binding.linearLayout.setAnimation(AnimationUtils.loadAnimation(this, R.anim.fade_up_l));
+
+        Objects.requireNonNull(getSupportActionBar()).hide();
     }
 
     private void SendPasswordResetLink() {
+        validateEmail();
+        boolean result = emailETLayout.getError() == null;
+        if (result) {
+            NoteDatabase.getInstance().requestResetPasswordLink(this, emailET.getText().toString().trim());
+        }
+    }
 
-        String email = forgotPasswordEditText.getText().toString();
-
-        if (!email.isEmpty()) {
-            progressDialog.show();
-            FirebaseAuth.getInstance().sendPasswordResetEmail(email).addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "Password Reset Link Sent!", Toast.LENGTH_LONG).show();
-                    progressDialog.cancel();
-                    finish();
-                }
-            }).addOnFailureListener(e -> {
-                if (e instanceof FirebaseAuthInvalidUserException) {
-                    Toast.makeText(getApplicationContext(), "Email ID does not Exists!", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Something went wrong!", Toast.LENGTH_LONG).show();
-                }
-            });
+    private void validateEmail() {
+        String email = emailET.getText().toString().trim();
+        if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            emailETLayout.setError(null);
         } else {
-            Toast.makeText(this, "Please enter a valid Email Address!", Toast.LENGTH_SHORT).show();
+            emailETLayout.setError(getString(R.string.invalid_email_error));
         }
     }
 }

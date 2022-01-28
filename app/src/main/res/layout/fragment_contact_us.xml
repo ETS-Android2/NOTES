@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactUsFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item1"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:translationX="200dp"
+        android:translationY="200dp"
+        app:cardBackgroundColor="@color/cp_2"
+        app:cardCornerRadius="999dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:alpha="0.9"
+        android:translationX="325dp"
+        android:translationY="325dp"
+        app:cardBackgroundColor="@color/cp_1"
+        app:cardCornerRadius="999dp"
+        app:layout_constraintBottom_toTopOf="@id/item1"
+        app:layout_constraintEnd_toStartOf="@id/item1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="32dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway_bold"
+                android:paddingVertical="24dp"
+                android:text="@string/contact_us_title"
+                android:textColor="@color/dark_blue_color"
+                android:textSize="42sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/raleway"
+                android:text="@string/contact_us_description"
+                android:textColor="@color/dark_blue_color"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/raleway"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:text="@string/contact_us_name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:drawableStartCompat="@drawable/ic_person"
+                    app:drawableTint="@color/cp_5" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/raleway"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:text="@string/contact_us_email"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:drawableStartCompat="@drawable/ic_email"
+                    app:drawableTint="@color/cp_5" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/raleway"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:text="@string/contact_us_phone_number"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:drawableStartCompat="@drawable/ic_phone"
+                    app:drawableTint="@color/cp_5" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/raleway"
+                    android:gravity="center"
+                    android:minHeight="50dp"
+                    android:text="@string/contact_us_location"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:drawableStartCompat="@drawable/ic_location"
+                    app:drawableTint="@color/cp_5" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/contactUsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/btn_solid"
+                android:backgroundTint="@color/cp_5"
+                android:backgroundTintMode="multiply"
+                android:fontFamily="@font/raleway"
+                android:hapticFeedbackEnabled="true"
+                android:minHeight="50dp"
+                android:paddingHorizontal="24dp"
+                android:text="@string/contact_us"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,32 +5,67 @@
       <map>
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/add_note.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/check_sign.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/circle_button.xml" value="0.2484375" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/custom_button.xml" value="0.1845" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/custom_edit_text.xml" value="0.2484375" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/gradient_dark_purple.xml" value="0.1435" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/gradient_not_layout_tint.xml" value="0.1435" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/gradient_note_tint.xml" value="0.1435" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/ic_add_note.xml" value="0.1435" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/ic_arrow_forward.xml" value="0.2484375" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/ic_person.xml" value="0.2484375" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/ic_save.xml" value="0.2484375" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/lock_icon.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/note_linear_gradient.xml" value="0.1975" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/notes_icon.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/outline.xml" value="0.1845" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/plus_sign.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/red_warning_icon.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/sign_in_button.xml" value="0.1296875" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/sign_up_button.xml" value="0.2484375" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/yello_warning_icon.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/drawable/yellow_warning_icon.xml" value="0.1435" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/font/raleway_ff.xml" value="0.2625" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/font/roboto_black_ff.xml" value="0.2625" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/font/roboto_bold_ff.xml" value="0.2625" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/font/roboto_regular_ff.xml" value="0.2625" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/font/rumraisinr.xml" value="0.2625" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_contact_us.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_display_note.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_forgot_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_note_editor.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_note_editor2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_register_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_sign_in_up.xml" value="0.264" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/activity_temp.xml" value="0.18432971014492755" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/app_bar_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/content_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/content_sign_in_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/custom_progress_bar.xml" value="0.1" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/custom_sign_out.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/fragment_account.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/fragment_contact_us.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/fragment_forgot_password.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/fragment_gallery.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/fragment_note_display.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/fragment_second.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/fragment_sign_in.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/fragment_sign_in.xml" value="0.264" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/fragment_sign_up.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/fragment_slideshow.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/nav_header.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/nav_header_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/note_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/note_layout.xml" value="0.2" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/layout/sign_out_layout.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/menu/activity_main_drawer.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/menu/main_menu.xml" value="0.264" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/menu/nav_menu.xml" value="0.21944444444444444" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/menu/note_display_menu.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/menu/note_editor_menu.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/menu/sign_in_out.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chanp/AndroidStudioProjects/NOTES/app/src/main/res/menu/sign_in_out_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/chanp/Downloads/all/NOTES PROJECT/NOTES/app/src/main/res/layout/activity_display_note.xml" value="0.23645833333333333" />

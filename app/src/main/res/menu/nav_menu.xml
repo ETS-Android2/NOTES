@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_notes"
+        android:icon="@drawable/ic_note"
+        android:title="@string/notes" />
+
+    <item
+        android:id="@+id/nav_account"
+        android:icon="@drawable/ic_account"
+        android:title="@string/nav_your_profile" />
+
+    <item
+        android:id="@+id/nav_contact_us"
+        android:icon="@drawable/ic_person"
+        android:title="@string/contact_us" />
+
+    <item
+        android:id="@+id/nav_rate_us"
+        android:icon="@drawable/ic_star"
+        android:title="@string/rate_us" />
+
+    <item
+        android:id="@+id/sign_out"
+        android:icon="@drawable/ic_sign_out"
+        android:title="@string/sign_out" />
+</menu>

@@ -1,56 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="8dp"
+    android:background="@drawable/gradient_note_tint"
+    android:backgroundTint="@color/red"
+    android:backgroundTintMode="multiply"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="16dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/noteCardView"
+    <TextView
+        android:id="@+id/titleTV"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginVertical="8dp"
-        app:cardBackgroundColor="@color/NoteLayoutColor"
-        app:cardCornerRadius="30dp">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/raleway_bold"
+        android:gravity="center"
+        android:lines="1"
+        android:text="@string/title"
+        android:textColor="@color/NoteLayoutTextColor"
+        android:textSize="20sp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/titleTV"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:paddingHorizontal="20dp"
-                android:paddingTop="15dp"
-                android:paddingBottom="5dp"
-                android:text="@string/TITLE"
-                android:textColor="@color/NoteLayoutTextColor"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/descriptionTV"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:gravity="start"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="10dp"
-                android:text="@string/DESCRIPTION"
-                android:textColor="@color/NoteLayoutTextColor"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/titleTV" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/descriptionTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/raleway"
+        android:gravity="start"
+        android:lines="5"
+        android:paddingVertical="8dp"
+        android:text="@string/description"
+        android:textColor="@color/NoteLayoutTextColor"
+        android:textSize="14sp" />
 </LinearLayout>

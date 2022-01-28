@@ -1,111 +1,151 @@
 package com.chanpreet.notes;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.Button;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import com.chanpreet.notes.databinding.ActivityNoteEditorBinding;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import com.pes.androidmaterialcolorpickerdialog.ColorPicker;
+
+import java.util.Objects;
 
 public class NoteEditorActivity extends AppCompatActivity {
 
-    FloatingActionButton confirmFAB;
-    FloatingActionButton deleteFAB;
-    DisplayNoteActivity displayNoteActivity;
-    EditText titleEditText;
-    EditText descriptionEditText;
-    Note currentNote;
-    boolean isNewNote = false;
+    private ActivityNoteEditorBinding binding;
+
+    public static final String EXTRA_NOTE = "EXTRA_NOTE";
+    private TextInputLayout titleETLayout;
+    private TextInputLayout descriptionETLayout;
+    private TextInputEditText titleET;
+    private TextInputEditText descriptionET;
+    private Note currentNote = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_note_editor);
+        binding = ActivityNoteEditorBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        Objects.requireNonNull(this.getSupportActionBar()).setHomeAsUpIndicator(R.drawable.ic_close);
 
-        confirmFAB = findViewById(R.id.confirmFAB);
-        deleteFAB = findViewById(R.id.deleteFAB);
-        titleEditText = findViewById(R.id.titleET);
-        descriptionEditText = findViewById(R.id.descriptionET);
-        displayNoteActivity = new DisplayNoteActivity();
+        titleETLayout = binding.titleETLayout;
+        descriptionETLayout = binding.descriptionETLayout;
+        titleET = binding.titleET;
+        descriptionET = binding.descriptionET;
 
-        confirmFAB.setOnClickListener(view -> UpdateNote());
-        deleteFAB.setOnClickListener(view -> DeleteNote());
-        getNotePassed();
-        if (currentNote.getTitle().isEmpty()) {
-            deleteFAB.setVisibility(View.GONE);
-            isNewNote = true;
-        } else {
-            fillNoteInformation();
+        //Initialize view
+        initializeView();
+
+        //Listeners
+        binding.noteColorBtn.setOnClickListener(view -> {
+            int color = binding.previewNote.cardLayout.getBackgroundTintList().getDefaultColor();
+            ColorPicker cp = new ColorPicker(NoteEditorActivity.this, Color.red(color), Color.green(color), Color.blue(color));
+            cp.show();
+            Button okColor = cp.findViewById(R.id.okColorButton);
+            okColor.setOnClickListener(v -> {
+                binding.previewNote.cardLayout.setBackgroundTintList(ColorStateList.valueOf(cp.getColor()));
+                cp.dismiss();
+                updateCurrentNote();
+            });
+        });
+        titleET.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                validateTitle();
+                updateCurrentNote();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        descriptionET.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                validateDescription();
+                updateCurrentNote();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+        binding.saveFAB.setOnClickListener(view -> saveNote());
+    }
+
+    private void saveNote() {
+        validateTitle();
+        validateDescription();
+        boolean result = titleETLayout.getError() == null
+                && descriptionETLayout.getError() == null;
+
+        if (result) {
+            NoteDatabase.getInstance().insertOrUpdate(this, currentNote);
+            finish();
         }
     }
 
-    private void getNotePassed() {
-        Intent intent = getIntent();
-        String ID = intent.getExtras().getString(Params.KEY_ID);
-        String title = intent.getExtras().getString(Params.KEY_TITLE);
-        String description = intent.getExtras().getString(Params.KEY_DESCRIPTION);
-        currentNote = new Note(ID, title, description);
+    private void initializeView() {
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            setTitle(getString(R.string.note_editor_title));
+            currentNote = (Note) bundle.getSerializable(EXTRA_NOTE);
+            titleET.setText(currentNote.getTitle());
+            descriptionET.setText(currentNote.getDescription());
+        } else {
+            setTitle(getString(R.string.add_note_title));
+            currentNote = new Note();
+        }
+        updatePreviewCard();
     }
 
-    private void fillNoteInformation() {
-        titleEditText.setText(currentNote.getTitle());
-        descriptionEditText.setText(currentNote.getDescription());
-        titleEditText.requestFocus();
+    private void updateCurrentNote() {
+        currentNote.setTitle(titleET.getText().toString());
+        currentNote.setDescription(descriptionET.getText().toString());
+        currentNote.setColor(binding.previewNote.cardLayout.getBackgroundTintList().getDefaultColor());
+        updatePreviewCard();
     }
 
-    private void DeleteNote() {
-        new AlertDialog.Builder(this)
-                .setIcon(R.drawable.red_warning_icon)
-                .setTitle("Delete this Note?")
-                .setMessage("Following action cannot be undone!")
-                .setNegativeButton("Yes", (dialogInterface, i) -> {
-                    displayNoteActivity.deleteRecord(currentNote.getID());
-                    finish();
-                })
-                .setPositiveButton("No", null)
-                .show();
+    private void updatePreviewCard() {
+        binding.previewNote.titleTV.setText(currentNote.getTitle());
+        binding.previewNote.descriptionTV.setText(currentNote.getDescription());
+        binding.previewNote.cardLayout.setBackgroundTintList(ColorStateList.valueOf(currentNote.getColor()));
     }
 
-    private void UpdateNote() {
-        String title = titleEditText.getText().toString().trim();
-        String description = descriptionEditText.getText().toString();
+    private void validateTitle() {
+        String title = Objects.requireNonNull(titleET.getText()).toString().trim();
         if (title.isEmpty()) {
-            Toast.makeText(this, "Title cannot be empty!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (isNewNote) {
-            displayNoteActivity.addRecord(title, description);
+            titleETLayout.setError(getString(R.string.invalid_title_error));
         } else {
-            displayNoteActivity.updateRecord(currentNote.getID(), title, description);
+            titleETLayout.setError(null);
         }
-        finish();
     }
 
-    @Override
-    public void onBackPressed() {
-        if (isNewNote) {
-            super.onBackPressed();
-            return;
+    private void validateDescription() {
+        String description = Objects.requireNonNull(descriptionET.getText()).toString().trim();
+        if (description.isEmpty()) {
+            descriptionETLayout.setError(getString(R.string.invalid_description_error));
+        } else {
+            descriptionETLayout.setError(null);
         }
-        String title = titleEditText.getText().toString();
-        String description = descriptionEditText.getText().toString();
-
-        Note tempNote = new Note(currentNote.getID(), title, description);
-        if (tempNote.toString().equals(currentNote.toString())) {
-            super.onBackPressed();
-            return;
-        }
-
-        new AlertDialog.Builder(this)
-                .setIcon(R.drawable.yellow_warning_icon)
-                .setTitle("Unsaved progress will be lost!")
-                .setMessage("Are you sure you want to exit?")
-                .setNegativeButton("Yes", (dialogInterface, i) -> NoteEditorActivity.super.onBackPressed())
-                .setPositiveButton("No", null)
-                .show();
     }
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ForgotPasswordActivity">
+    tools:context=".SignUpActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -34,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="32dp"
                     android:fontFamily="@font/raleway_bold"
-                    android:text="@string/forgot_password_title"
+                    android:text="@string/create_account"
                     android:textColor="@color/white"
                     android:textSize="40sp"
                     android:textStyle="bold"
@@ -52,6 +52,32 @@
                 android:layout_marginBottom="48dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nameETLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:hint="@string/name"
+                    android:minHeight="48dp"
+                    app:boxStrokeColor="@color/dark_blue_color"
+                    app:boxStrokeErrorColor="@color/error_color"
+                    app:endIconMode="none"
+                    app:endIconTint="@color/drawable_tint"
+                    app:errorEnabled="true"
+                    app:helperTextTextColor="@color/helper_color"
+                    app:startIconDrawable="@drawable/ic_person"
+                    app:startIconTint="@color/drawable_tint">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nameET"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="name"
+                        android:fontFamily="@font/raleway"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/emailETLayout"
@@ -79,35 +105,82 @@
                         android:inputType="textEmailAddress" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/resetBtn"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/passwordETLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="32dp"
-                    android:background="@drawable/btn_outline"
-                    android:backgroundTint="@color/dark_blue_color"
+                    android:layout_marginVertical="4dp"
+                    android:hint="@string/password"
+                    android:minHeight="48dp"
+                    app:boxStrokeColor="@color/dark_blue_color"
+                    app:boxStrokeErrorColor="@color/error_color"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/drawable_tint"
+                    app:errorEnabled="true"
+                    app:helperTextTextColor="@color/helper_color"
+                    app:startIconDrawable="@drawable/ic_password_key"
+                    app:startIconTint="@color/drawable_tint">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passwordET"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="password"
+                        android:fontFamily="@font/raleway"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/confirmPasswordETLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:hint="@string/confirm_password"
+                    android:minHeight="48dp"
+                    app:boxStrokeColor="@color/dark_blue_color"
+                    app:boxStrokeErrorColor="@color/error_color"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/drawable_tint"
+                    app:errorEnabled="true"
+                    app:helperTextTextColor="@color/helper_color"
+                    app:startIconDrawable="@drawable/ic_password_key"
+                    app:startIconTint="@color/drawable_tint">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/confirmPasswordET"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:autofillHints="password"
+                        android:fontFamily="@font/raleway"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/privacyPolicyTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
                     android:fontFamily="@font/raleway"
-                    android:hapticFeedbackEnabled="true"
-                    android:minHeight="50dp"
-                    android:text="@string/send_reset_link"
-                    android:textAllCaps="false"
-                    android:textColor="@color/dark_blue_color"
-                    android:textSize="18sp" />
+                    android:text="@string/accept_privacy_policy"
+                    android:textColor="@color/error_color"
+                    android:textSize="16sp" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/signInBtn"
+                    android:id="@+id/signUpBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="32dp"
                     android:background="@drawable/btn_solid"
                     android:backgroundTint="@color/dark_blue_color"
+                    android:backgroundTintMode="multiply"
                     android:fontFamily="@font/raleway"
                     android:hapticFeedbackEnabled="true"
                     android:minHeight="50dp"
                     android:paddingHorizontal="100dp"
-                    android:text="@string/log_in"
+                    android:text="@string/sign_up"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="18sp" />
@@ -115,7 +188,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="32dp"
                     android:layout_marginVertical="16dp"
                     android:orientation="horizontal">
 
@@ -147,7 +219,7 @@
                 </LinearLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/signUpBtn"
+                    android:id="@+id/signInBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -157,11 +229,10 @@
                     android:hapticFeedbackEnabled="true"
                     android:minHeight="50dp"
                     android:paddingHorizontal="100dp"
-                    android:text="@string/sign_up"
+                    android:text="@string/log_in"
                     android:textAllCaps="false"
                     android:textColor="@color/grey"
                     android:textSize="18sp" />
-
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

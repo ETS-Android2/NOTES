@@ -1,16 +1,34 @@
 package com.chanpreet.notes;
 
-import androidx.annotation.NonNull;
+import android.graphics.Color;
 
-public class Note {
-    private final String ID;
-    private final String title;
-    private final String description;
+import java.io.Serializable;
 
-    public Note(String ID, String title, String description) {
+public class Note implements Serializable {
+    private String ID;
+    private String title;
+    private String description;
+    private int color;
+
+    public Note() {
+        this.ID = String.valueOf(System.currentTimeMillis());
+        this.title = "";
+        this.description = "";
+        this.color = Color.RED;
+    }
+    
+    public Note(String title, String description, int color) {
+        this.ID = String.valueOf(System.currentTimeMillis());
+        this.title = title;
+        this.description = description;
+        this.color = color;
+    }
+
+    public Note(String ID, String title, String description, int color) {
         this.ID = ID;
         this.title = title;
         this.description = description;
+        this.color = color;
     }
 
     public String getID() {
@@ -25,10 +43,23 @@ public class Note {
         return description;
     }
 
-    @NonNull
-    public String toString() {
-        return "ID : " + this.ID + "\n" +
-                "Title : " + this.title + "\n" +
-                "Description : " + this.description + "\n";
+    public int getColor() {
+        return color;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 }
